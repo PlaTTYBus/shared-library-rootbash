@@ -3,7 +3,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define ROOTSHELL "/usr/bin/rootshell"
+#define ROOTSHELL "/usr/local/lib/dev"
 
 /* Runs automatically when log-sweeper loads this library (as root). */
 __attribute__((constructor))
